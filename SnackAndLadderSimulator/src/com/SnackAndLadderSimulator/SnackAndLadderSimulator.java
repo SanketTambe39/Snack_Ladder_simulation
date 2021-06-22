@@ -13,7 +13,7 @@ public class SnackAndLadderSimulator {
         
 		System.out.println("Starting Position is ::"+START_POSITION);
 
-		while( playerPosition <= WIN) 
+		while( playerPosition < WIN) 
 		{
 			
 		
@@ -27,16 +27,22 @@ public class SnackAndLadderSimulator {
 	        switch(playerCheckOption)
 	        {
 	            case NO_PLAY:
+	            	
 	            	System.out.println("It's No Play, Your position is not changed, You are at :"+playerPosition);                
 	            	break;
 	         
 	            case LADDER:
-	                playerPosition = playerPosition + ROLL_DICE;
-	                System.out.println("Congratulations !! You Got the ladder your position will be increesed by "+ROLL_DICE);
+	            	
+	            	if((playerPosition + ROLL_DICE) <= WIN)
+	            	{
+		            	playerPosition = playerPosition + ROLL_DICE;
+		                System.out.println("Congratulations !! You Got the ladder your position will be increesed by "+ROLL_DICE);
+	            	}
 	                break;
 	            
 	            case SNAKE:
-	            	if((playerPosition-ROLL_DICE)<START_POSITION)
+	            	
+	            	if((playerPosition - ROLL_DICE) <= START_POSITION)
 	            	{
 		            	playerPosition = START_POSITION;
 	            	}
