@@ -10,12 +10,13 @@ public class SnackAndLadderSimulator {
         final int SNAKE=3;
         final int WIN=100;
         int playerPosition=0;
+        int DICE_PLAYED=0;
         
 		System.out.println("Starting Position is ::"+START_POSITION);
 
 		while( playerPosition < WIN) 
 		{
-			
+			DICE_PLAYED++;
 		
 			int ROLL_DICE = (int) (Math.floor(Math.random() * 10 ) % 6) + 1 ;
 			System.out.println("After Rolling Dice We Get ::"+ROLL_DICE);
@@ -59,6 +60,7 @@ public class SnackAndLadderSimulator {
 	        }
 	        System.out.println("Position :: "+playerPosition);
 		}
+		System.out.println("We just make "+DICE_PLAYED+" Number of dice to win the game");
 	}
 
 }
